@@ -1,0 +1,20 @@
+{
+    "clear": "clear",
+    "cloud": "cloud",
+    "overcast": "cloud",
+    "rain": "rain",
+    "drizzle": "rain",
+    "thunder": "storm",
+    "storm": "storm",
+    "snow": "snow",
+    "mist": "mist",
+    "fog": "mist",
+    "haze": "haze",
+    "smoke": "smoke",
+    "dust": "mist",
+    "sand": "mist",
+    "ash": "mist",
+    "wind": "wind",
+    "squall": "wind",
+    "tornado": "wind"
+}
