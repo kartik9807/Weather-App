@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    height: 100vh;
+}
+nav{
+    display: flex;
+    background-color: rgb(38, 38, 229);
+    padding: 12px 30px;
+    justify-content:space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+input{
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+}
+button{
+    padding: 6px;
+    border: transparent;
+    border-radius: 6px;
+    transition:all 0.3s ease;
+}
+button:hover{
+    transform: scale(1.05);
+}
+body{
+    /* overflow-y: hidden; */
+    height:  100vh;
+    background-color: papayawhip;
+}
+.container{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.card{
+    height: 300px;
+    width: 300px;
+    color: #000;
+    gap: 10px;
+    border-radius: 6px;
+    border: 3px solid rgb(204, 201, 201);
+    background-color: rgb(231, 226, 226);
+    text-align: center;
+}
+.card .head{
+    padding: 10px;
+    background-color: papayawhip;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 16px;
+    padding: 35px 15px 33.8px;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+}
+footer span{
+    color: crimson;
+}
+.content h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(218, 87, 87);
+}
+.content h2{
+    font-size: 1.2rem;
+    color: rgb(99, 92, 92);
+}
+@media (max-width:650px){
+    nav{
+        font-size: 1rem;
+    }
+}
+@media (max-width:560px) {
+    
+}
