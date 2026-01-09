@@ -96,5 +96,9 @@ footer span{
     }
 }
 @media (max-width:560px) {
-    
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
