@@ -38,7 +38,7 @@ document.getElementById("search").addEventListener("click",async function (){
     
     // weather icon update 
     async function Weather_icon(des){
-        let a = await fetch("/weatherIconMap.json");
+        let a = await fetch("./weatherIconMap.json");
         let response = await a.json();
         for (const key in response) {
             if(des.includes(key)){
@@ -78,3 +78,4 @@ document.getElementById("search").addEventListener("click",async function (){
                 </div>`
     document.querySelector(".wind").innerHTML = text3;
 });
+
