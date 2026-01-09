@@ -21,6 +21,7 @@ async function GetWeather(city){
         return null;// null:- nothing is return by this function
     }
 };
+
 // content update
 document.getElementById("search").addEventListener("click",async function (){
     let weather = await GetWeather(cityName.value);
@@ -33,38 +34,20 @@ document.getElementById("search").addEventListener("click",async function (){
         });
         return;
     }; // to get if data is available or not
-    console.log(weather);
     document.querySelector(".heading").innerHTML = `Weather for <span style="color:crimson;font-weight=1000;text-transform: uppercase;">${cityName.value}</span>`
+    
     // weather icon update 
-    function Weather_icon(des){
-        const weatherIconMap = {
-            clear: "clear",
-            cloud: "cloud",
-            overcast: "cloud",
-            rain: "rain",
-            drizzle: "rain",
-            thunder: "storm",
-            storm: "storm",
-            snow: "snow",
-            mist: "mist",
-            fog: "mist",
-            haze: "haze",
-            smoke: "smoke",
-            dust: "mist",
-            sand: "mist",
-            ash: "mist",
-            wind: "wind",
-            squall: "wind",
-            tornado: "wind"
-        };
-        for (const key in weatherIconMap) {
+    async function Weather_icon(des){
+        let a = await fetch("/weatherIconMap.json");
+        let response = await a.json();
+        for (const key in response) {
             if(des.includes(key)){
-                console.log(weatherIconMap[key])
-                return weatherIconMap[key];
+                console.log(response[key]);
+                return response[key];
             }
         }
         return "default";
-    }
+    }    
 
     // temperature box :- 
     const maxT = weather.temperature + Math.ceil(Math.random()*2);
@@ -81,16 +64,17 @@ document.getElementById("search").addEventListener("click",async function (){
     let text2 = `<h1 class="head">Humidity Info</h1>
                 <div class="content">
                     <img src="Weather Icons/humidity.svg" alt="" width="100" height="100" alt="icon">
-                    <h1>${weather.humidity} %</h1>
+                    <h1>${weather.humidity}%</h1>
                 </div>`
     document.querySelector(".hum").innerHTML = text2;
+    
     // wind box :-
+    // let svg = ;
     let text3 = `<h1 class="head">Wind Info</h1>
                 <div class="content">
-                    <img src="Weather Icons/${Weather_icon(weather.description)}.svg" alt="" width="100" height="100" alt="icon">
+                    <img src="Weather Icons/${await Weather_icon(weather.description)}.svg" alt="" width="100" height="100" alt="icon">
                     <h2>${weather.description}</h2>
                     <h2>${weather.wind_speed} Km/Hrs</h2>
                 </div>`
     document.querySelector(".wind").innerHTML = text3;
 });
-
