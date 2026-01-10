@@ -41,7 +41,7 @@ document.getElementById("search").addEventListener("click",async function (){
         let a = await fetch("./weatherIconMap.json");
         let response = await a.json();
         for (const key in response) {
-            if(des.includes(key)){
+            if((des.toLowerCase()).includes(key)){
                 console.log(response[key]);
                 return response[key];
             }
@@ -69,7 +69,6 @@ document.getElementById("search").addEventListener("click",async function (){
     document.querySelector(".hum").innerHTML = text2;
     
     // wind box :-
-    // let svg = ;
     let text3 = `<h1 class="head">Wind Info</h1>
                 <div class="content">
                     <img src="Weather Icons/${await Weather_icon(weather.description)}.svg" alt="" width="100" height="100" alt="icon">
@@ -78,4 +77,5 @@ document.getElementById("search").addEventListener("click",async function (){
                 </div>`
     document.querySelector(".wind").innerHTML = text3;
 });
+
 
