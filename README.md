@@ -26,4 +26,4 @@ The app displays temperature, humidity, wind speed, and weather conditions with 
 - **CSS**
 - **JavaScript (ES6+)**
 - **Fetch API**
-- **RapidAPI (Weather API) 
+- **RapidAPI (Weather API)** 
