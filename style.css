@@ -20,6 +20,9 @@ nav{
     font-size: 1.2rem;
     color: #fff;
 }
+.heading{
+    text-align:center;
+}
 input{
     padding: 6px;
     border-radius: 6px;
@@ -113,3 +116,4 @@ footer span{
         gap: 10px;
     }
 }
+
