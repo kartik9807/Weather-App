@@ -49,11 +49,11 @@ document.getElementById("search").addEventListener("click",async function (){
     }    
 
     // temperature box :- 
-    const maxT = Math.floor(weather.main.temp_max - 32 * 5/9 + 1).toFixed(2);
-    const minT = Math.floor(weather.main.temp_min - 32 * 5/9).toFixed(2);
+    const maxT = Math.floor((weather.main.temp_max - 32) * 5/9 + 1).toFixed(2);
+    const minT = Math.floor((weather.main.temp_min - 32) * 5/9).toFixed(2);
     let text = `<h1 class="head">Temperature</h1>
                 <div class="content">    
-                    <h1>${Math.floor(weather.main.temp - 32 * 5/9).toFixed(2)} <sup>°</sup>C</h1>
+                    <h1>${Math.floor((weather.main.temp - 32) * 5/9).toFixed(2)} <sup>°</sup>C</h1>
                     <h2>Max temperature is ${maxT} <sup>°</sup>C</h2>
                     <h2>Min temperature is ${minT} <sup>°</sup>C</h2>
                 </div>`
@@ -68,7 +68,6 @@ document.getElementById("search").addEventListener("click",async function (){
     document.querySelector(".hum").innerHTML = text2;
     
     // wind box :-
-    // let svg = ;
     let text3 = `<h1 class="head">Wind Info</h1>
                 <div class="content">
                     <img src="Weather Icons/${await Weather_icon(weather.weather[0].description)}.svg" alt="" width="100" height="100" alt="icon">
